@@ -53,6 +53,7 @@ class LambdaTest {
 
     @Test
     fun test() {
+
         val lambda = TestSkill()
         val baos = ByteArrayOutputStream()
         lambda.handleRequest(StringInputStream(launchJson), baos, TestContext())
