@@ -1,0 +1,24 @@
+{
+  "askcliResourcesVersion": "2020-03-31",
+  "profiles": {
+    "thomas_prod": {
+      "skillMetadata": {
+        "src": "./skill-package"
+      },
+      "code": {
+        "default": {
+          "src": "./lambda"
+        }
+      },
+      "skillInfrastructure": {
+        "userConfig": {
+          "runtime": "java11",
+          "handler": "it.introini.alexa.criptovalute.CriptoValuteStreamHandler",
+          "templatePath": "./infrastructure/cfn-deployer/skill-stack.yaml",
+          "awsRegion": "eu-west-1"
+        },
+        "type": "@ask-cli/cfn-deployer"
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "it-IT": {
+          "summary": "Una skill per tenersi aggiornati sull'andamento delle criptovalute più famose",
+          "examplePhrases": [
+            "Alexa apri cripto info",
+            "Alexa chiedi a cripto info quanto vale Bitcoin",
+            "Alexa chiedi a cripto info quando vale Ethereum in dollari"
+          ],
+          "name": "skill-criptovalute",
+          "description": "Con questa skill sarà possibile tenersi aggiornati sulle variazioni di prezzo delle più famose criptovalute. Al momento sono supportati solo i prezzi in Euro e in Dollari.",
+          "smallIconUri": "https://alexa-skill-criptovalute-assets.s3-eu-west-1.amazonaws.com/icon_108_A2Z.png",
+          "largeIconUri": "https://alexa-skill-criptovalute-assets.s3-eu-west-1.amazonaws.com/icon_512_A2Z.png"
+        }
+      },
+      "isAvailableWorldwide": false,
+      "testingInstructions": "Sample Testing Instructions.",
+      "category": "BUSINESS_AND_FINANCE",
+      "distributionCountries": [
+        "IT"
+      ]
+    },
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "usesPersonalInfo": false,
+      "isChildDirected": false,
+      "isExportCompliant": true,
+      "containsAds": false
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:eu-west-1:867654462401:function:ask-skill-criptovalute-default-AlexaSkillFunction-1ICKYE2FUD226"
+        }
+      }
+    },
+    "manifestVersion": "1.0"
+  }
+}
