@@ -4,7 +4,7 @@ import com.amazon.ask.dispatcher.request.handler.HandlerInput
 import com.amazon.ask.model.IntentRequest
 import com.amazon.ask.model.Response
 import com.amazon.ask.request.Predicates
-import drewcarlson.coingecko.CoinGeckoService
+import drewcarlson.coingecko.CoinGeckoClient
 import it.introini.alexa.criptovalute.util.SkillUtils
 import it.introini.alexa.criptovalute.util.speechResponse
 import kotlinx.coroutines.runBlocking
@@ -18,10 +18,9 @@ class GetFavoriteCoinsUpdatesIntentHandler: AbstractRequestHandler("GetFavoriteC
             return input.responseBuilder
                 .withSpeech(SkillUtils.m(input, "FAVORITE_COIN_LIST_EMPTY")).build()
         } else {
-            val coingecko = CoinGeckoService()
             val currency = "eur"
             val prices = runBlocking {
-                coingecko.getPrice(
+                CoinGeckoClient.create().getPrice(
                     ids = coins.keys.joinToString(","),
                     vsCurrencies = currency,
                     include24hrChange = true

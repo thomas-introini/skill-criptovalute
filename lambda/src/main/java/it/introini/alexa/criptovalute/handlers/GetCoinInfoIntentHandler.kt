@@ -3,13 +3,13 @@ package it.introini.alexa.criptovalute.handlers
 import com.amazon.ask.dispatcher.request.handler.HandlerInput
 import com.amazon.ask.model.IntentRequest
 import com.amazon.ask.model.Response
-import drewcarlson.coingecko.CoinGeckoService
 import it.introini.alexa.criptovalute.model.*
 import it.introini.alexa.criptovalute.util.SkillUtils
 import it.introini.alexa.criptovalute.util.SlotsUtils
 import it.introini.alexa.criptovalute.util.coinNotRecognized
 import kotlinx.coroutines.runBlocking
 import java.util.*
+import drewcarlson.coingecko.CoinGeckoClient
 
 class GetCoinInfoIntentHandler : AbstractRequestHandler("GetCoinInfoIntent") {
     override fun handle(input: HandlerInput, intentRequest: IntentRequest): Optional<Response> {
@@ -20,9 +20,8 @@ class GetCoinInfoIntentHandler : AbstractRequestHandler("GetCoinInfoIntent") {
                 return coinNotRecognized(input, cointSlot.input)
             }
             is ResolvedRequiredSlotValue -> {
-                val coingecko = CoinGeckoService()
                 val coinInfo = runBlocking {
-                    coingecko.getCoinById(
+                    CoinGeckoClient.create().getCoinById(
                         id = cointSlot.resolvedValue.id,
                         marketData = true
                     )

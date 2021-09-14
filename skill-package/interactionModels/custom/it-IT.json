@@ -106,6 +106,19 @@
             "i prezzi dei miei preferiti",
             "aggiornamenti"
           ]
+        },
+        {
+          "name": "GetTrendingCoinsIntent",
+          "slots": [
+            {
+              "name": "Currency",
+              "type": "CurrencySlotType"
+            }
+          ],
+          "samples": [
+            "i trend del momento in {Currency}",
+            "quali sono le monete del momento in {Currency}"
+          ]
         }
       ],
       "types": [

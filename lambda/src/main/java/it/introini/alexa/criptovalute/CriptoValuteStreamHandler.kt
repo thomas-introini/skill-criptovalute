@@ -23,6 +23,7 @@ fun skill(): Skill = Skills.standard()
             AddFavoriteCoinIntentHandler(),
             GetFavoriteCoinsUpdatesIntentHandler(),
             RemoveFavoriteCoinIntentHandler(),
+            GetTrendingCoinsIntentHandler(),
             SessionEndedRequestHandler(),
             FallbackIntentHandler())
         .withSkillId(SKILL_ID)
